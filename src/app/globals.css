@@ -1,27 +1,155 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-color: #181A1B;
+  --background-end-color: #181A1B;
 }
+
+/* :root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-color: #FFA500; 
+  --background-end-color: #FF6CB8; 
+} */
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --background-start-color: #181A1B;
+    /* Green */
+    --background-end-color: #181A1B;
+    /* Blue */
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #181A1B;
+}
+
+.nfterra {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 8px;
+  padding-left: 10px;
+  font-weight: bold;
+  font-size: 36px;
+  color: rgb(141, 235, 212);
+}
+
+.divContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-top: 8px;
+  padding-right: 10px;
+  /* background-color: #00A3E0; */
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  color:rgb(255, 255, 255)
+}
+
+.connectWallet {
+  margin-left: 89%;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  border-radius: 10px;
+  text-align: center;
+  background-color: rgb(151, 38, 189);
+  width: 200px;
+  height: 40px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.connectWallet:hover {
+  background-color: rgb(118, 25, 149);
+}
+
+.navbar {
+  display: flex;
+  position: fixed;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #0f1112;
+  padding: 10px 20px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height:60px
+}
+
+.iconshell {
+  padding: 10px;
+}
+
+.walletContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  position: absolute;
+  padding-top: 5px;
+  /* background-color: #00A3E0; */
+  width: 60%;
+  align-self: center;
+  text-align: center;
+  right: 0;
+  top: 0;
+  margin-right: 220px;
+}
+
+
+.slide-in-content {
+  animation: slideIn 0.4s ease;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(20%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+.walletName {
+  margin-right: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
+
+.walletName:hover {
+  cursor: pointer;
+  /* background-color: rgb(243, 235, 245); */
+}
+.connectWallet {
+  /* Existing styles */
+  color: rgb(255, 255, 255);
+  /* Add the following style for disconnect state */
+}
+
+.connectWallet.disconnect {
+  color: rgb(255, 255, 255);
+}
+
+.userAssets{
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Vertically align items to center */
+  justify-content: center; /* Horizontally align items to center */
+  height: 100vh; /* Set the height of the container */
+  color: #f0f0f0;
+  text-align: center;
 }
