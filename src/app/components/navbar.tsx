@@ -1,7 +1,8 @@
 'use client';
 import { useState } from "react";
 import { Kuber, CIP30Wallet, CIP30ProviderProxy, WalletBalance } from "kuber-client";
-import UserAssets from "./userAssets";
+
+import Deploy from "./deploy";
 
 const Navbar = () => {
     const [installedWallets, setInstalledWallets] = useState<CIP30ProviderProxy[]>([]);
@@ -13,7 +14,6 @@ const Navbar = () => {
             try {
                 const kuber = new Kuber('https://preview.kuberide.com');
                 const providers = await CIP30Wallet.listProviders();
-                const mw = providers[0]
                 if (!providers) {
                     window.alert('Please Install CIP-30 Compatible Wallet in Your Browser');
                     return;
@@ -43,7 +43,7 @@ const Navbar = () => {
         <>
             <div className="navbar">
                 <div className="nfterra">
-                    ℂ ℕ 𝔽 𝕋 &nbsp;
+                    Ｃ Ｎ Ｆ Ｔ &nbsp;
                 </div>
                 <div className="divContainer">
                     <div>
@@ -63,13 +63,14 @@ const Navbar = () => {
                                         </td>
                                     }
                                     {connectedWallet && (
-                                        <><td className="walletName">
+                                        <><td className ="walletNameSeperator">|</td><td className="walletName">
                                             <img style={{ width: '30px', height: '30px' }} src={connectedWallet.icon} alt={connectedWallet.name} />
-                                        </td></>
+                                        </td>
+                                        <td className= "walletName"><p>{connectedWallet.name}</p></td><td>&nbsp;</td></>
                                     )}
                                     {!connectedWallet &&
                                         installedWallets.map((wallet) => (
-                                            <><><><td className="walletName">
+                                            <><><><td className ="walletNameSeperator">|</td><td className="walletName">
                                                 <img style={{ width: '30px', height: '30px' }} src={wallet.icon} alt={wallet.name} onClick={() => enableWallet(wallet)} />
                                             </td><td className="walletName"><p onClick={() => enableWallet(wallet)}>{wallet.name} </p></td></><td>&nbsp;</td></></>
                                         ))}
@@ -82,7 +83,7 @@ const Navbar = () => {
             </div>
 
             {connectedWallet &&
-                <UserAssets connectedWallet={connectedWallet} />
+                <Deploy connectedWallet={connectedWallet} />
             }
         </>
     );

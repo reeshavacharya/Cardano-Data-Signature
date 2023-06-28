@@ -1,0 +1,10 @@
+{
+	"sellerAddr" : "addr_test1qpw57k84mzwmpqyx6n9smye79mxt8rqpfpvx7p6chz95sm7a3aw5tgv4fc9weuwme2u29aerv5hk0m2lkpkgasn7gtxqwen0r7",
+	"sellContext" : {"selections": "addr_test1qpw57k84mzwmpqyx6n9smye79mxt8rqpfpvx7p6chz95sm7a3aw5tgv4fc9weuwme2u29aerv5hk0m2lkpkgasn7gtxqwen0r7"},
+	"price" : 3000000,
+	"asset" :{
+		"34e6054e3e74ecf4a9b6eb4e34a865f6b0b5fee85e6a9bfba0d2d025":{
+			"546f6b656e31":1
+		}
+	}
+}
